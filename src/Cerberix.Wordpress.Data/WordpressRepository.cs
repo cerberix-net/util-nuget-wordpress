@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
-using Cerberix.DataAccess.Core;
+using Cerberix.DataAccess;
 using Cerberix.Extension.Core;
-using Cerberix.Wordpress.Core;
 
 namespace Cerberix.Wordpress.Data
 {
@@ -23,9 +23,9 @@ namespace Cerberix.Wordpress.Data
             string postId
             )
         {
-            var dbQuery = $"SELECT p.post_date,p.post_title,p.post_name,p.post_content FROM wp_posts p WHERE p.post_type='post' AND p.post_status='{status.ToString()}' AND p.post_name='{postId}' LIMIT 1;";
+            const string dbQuery = "SELECT p.post_date,p.post_title,p.post_name,p.post_content FROM wp_posts p WHERE p.post_type='post' AND p.post_status=@status AND p.post_name=@postId LIMIT 1;";
 
-            var dbObject = await _dbConnection.QueryScalar<WordpressPostContentDto>(dbQuery);
+            var dbObject = await _dbConnection.QuerySingle<WordpressPostContentDto>(dbQuery, new { status = status.ToString(), postId });
             return dbObject;
         }
 
@@ -33,8 +33,9 @@ namespace Cerberix.Wordpress.Data
             WordpressPostStatusType status
             )
         {
-            var dbQuery = $"SELECT COUNT(1) post_count FROM wp_posts WHERE post_type='post' AND post_status='{status.ToString()}';";
-            var dbObject = await _dbConnection.QueryScalar<int>(dbQuery);
+            const string dbQuery = "SELECT COUNT(1) post_count FROM wp_posts WHERE post_type='post' AND post_status=@status;";
+
+            var dbObject = await _dbConnection.Execute(dbQuery, new { status = status.ToString() });
             return dbObject;
         }
 
@@ -54,9 +55,9 @@ namespace Cerberix.Wordpress.Data
                 throw new ArgumentOutOfRangeException("pageSize");
             }
 
-            var dbQuery = $"SELECT DISTINCT p.post_name FROM wp_posts p WHERE p.post_type='post' AND p.post_status='{status.ToString()}' ORDER BY 1 DESC LIMIT {pageSize} OFFSET {pageIndex * pageSize};";
-            var dbObject = await _dbConnection.Query<string>(dbQuery);
-            return dbObject.EnsureArray();
+            var dbQuery = $"SELECT DISTINCT p.post_name FROM wp_posts p WHERE p.post_type='post' AND p.post_status=@status ORDER BY 1 DESC LIMIT {pageSize} OFFSET {pageIndex * pageSize};";
+            var dbObject = await _dbConnection.Query<WordpressPostDto>(dbQuery, new { status = status.ToString() });
+            return dbObject.Select(r => r.post_name).EnsureArray();
         }
 
         public virtual async Task<int> GetPostPageCount(

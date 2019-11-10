@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Cerberix.Caching.Core;
-using Cerberix.DataAccess.Core;
-using Cerberix.Wordpress.Core;
+using Cerberix.DataAccess;
 
 namespace Cerberix.Wordpress.Data
 {
@@ -54,12 +53,12 @@ namespace Cerberix.Wordpress.Data
                 );
         }
 
-        private Task<TResult> GetFromCacheOrData<TResult>(
+        private async Task<TResult> GetFromCacheOrData<TResult>(
             Func<string> getCacheItemKey,
             Func<Task<TResult>> getCacheItemFunc
             )
         {
-            var result = _cacher.GetOrSet(
+            var result = await _cacher.GetOrSet(
                 cacheItemKey: getCacheItemKey(),
                 cacheItemPolicy: _policyFunc(typeof(TResult)),
                 getCacheItemFunc: getCacheItemFunc

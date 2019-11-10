@@ -3,12 +3,12 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <RuntimeIdentifiers>win7-x64</RuntimeIdentifiers>
-    <Authors>pacjman@cerberix.net</Authors>
+    <Authors>hai@cerberix.net</Authors>
     <Company>cerberix.net</Company>
     <Description>data access wordpress module for dot net standard</Description>
     <RepositoryUrl>https://github.com/cerberix-net/util-nuget-wordpress/</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <Version>1.0.0-pre03</Version>
+    <Version>1.1.0</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
@@ -20,11 +20,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Cerberix.Caching.Core" Version="1.0.0-pre02" />
-    <PackageReference Include="Cerberix.DataAccess.Dapper" Version="1.0.0-pre00" />
+    <PackageReference Include="Cerberix.Caching.Core" Version="1.0.0" />
+    <PackageReference Include="Cerberix.DataAccess" Version="1.1.0" />
     <PackageReference Include="Cerberix.Extension.Core" Version="1.0.0" />
-    <PackageReference Include="Cerberix.Wordpress.Core" Version="1.0.0" />
-    <PackageReference Include="Dapper" Version="1.50.5" />
+    <PackageReference Include="Cerberix.Wordpress" Version="1.1.0" />
   </ItemGroup>
 
 </Project>
