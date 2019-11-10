@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Cerberix.DataAccess;
-using Cerberix.Extension.Core;
+using Cerberix.Extension;
 
-namespace Cerberix.Wordpress.Data
+namespace Cerberix.Wordpress.DataAccess
 {
     public class WordpressRepository : IWordpressRepository
     {

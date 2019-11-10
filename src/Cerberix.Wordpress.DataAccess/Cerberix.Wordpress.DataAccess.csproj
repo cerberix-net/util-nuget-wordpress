@@ -8,22 +8,22 @@
     <Description>data access wordpress module for dot net standard</Description>
     <RepositoryUrl>https://github.com/cerberix-net/util-nuget-wordpress/</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <Version>1.1.0</Version>
+    <Version>1.1.1</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <PackageLicenseUrl>https://github.com/cerberix-net/util-nuget-wordpress/blob/master/LICENSE</PackageLicenseUrl>
     <PackageIconUrl>https://raw.githubusercontent.com/cerberix-net/util-nuget-wordpress/master/img/cerberix.png</PackageIconUrl>
-    <PackageId>Cerberix.Wordpress.Data</PackageId>
-    <Product>Cerberix.Wordpress.Data</Product>
+    <PackageId>Cerberix.Wordpress.DataAccess</PackageId>
+    <Product>Cerberix.Wordpress.DataAccess</Product>
     <PackageReleaseNotes>Initial Release</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Cerberix.Caching.Core" Version="1.0.0" />
+    <PackageReference Include="Cerberix.Caching" Version="1.1.0" />
     <PackageReference Include="Cerberix.DataAccess" Version="1.1.0" />
-    <PackageReference Include="Cerberix.Extension.Core" Version="1.0.0" />
-    <PackageReference Include="Cerberix.Wordpress" Version="1.1.0" />
+    <PackageReference Include="Cerberix.Extension" Version="1.1.0" />
+    <PackageReference Include="Cerberix.Wordpress" Version="1.1.1" />
   </ItemGroup>
 
 </Project>

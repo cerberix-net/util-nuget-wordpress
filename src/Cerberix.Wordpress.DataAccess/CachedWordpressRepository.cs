@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Cerberix.Caching.Core;
+using Cerberix.Caching;
 using Cerberix.DataAccess;
 
-namespace Cerberix.Wordpress.Data
+namespace Cerberix.Wordpress.DataAccess
 {
     public class CachedWordpressRepository : WordpressRepository
     {
