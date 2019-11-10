@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Cerberix.Wordpress.Core
+namespace Cerberix.Wordpress
 {
     public class WordpressPostDto
     {

@@ -1,4 +1,4 @@
-﻿namespace Cerberix.Wordpress.Core
+﻿namespace Cerberix.Wordpress
 {
     public class WordpressTermDto
     {

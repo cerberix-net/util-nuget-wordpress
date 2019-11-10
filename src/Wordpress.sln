@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.168
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cerberix.Wordpress.Core", "Cerberix.Wordpress.Core\Cerberix.Wordpress.Core.csproj", "{118FE874-F14F-47A0-9DCE-C8F14C568EFA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cerberix.Wordpress", "Cerberix.Wordpress\Cerberix.Wordpress.csproj", "{118FE874-F14F-47A0-9DCE-C8F14C568EFA}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cerberix.Wordpress.Data", "Cerberix.Wordpress.Data\Cerberix.Wordpress.Data.csproj", "{AC63AE05-1A93-4751-B8B9-B7990F2855A3}"
 EndProject
